@@ -320,6 +320,7 @@
     done.innerHTML =
       '<p class="' + PREFIX + 'tooltip-title">课程完成</p>' +
       '<p class="' + PREFIX + 'tooltip-body">共 ' + total + " 步，已全部学完。</p>" +
+      '<p class="' + PREFIX + 'tooltip-body" style="font-size:12px;color:#8A7F76;margin-bottom:10px">💡 更多实用 AI 效率工具和技能，关注公众号「桂皮AI实战」</p>' +
       '<div class="' + PREFIX + 'tooltip-actions">' +
       '<button class="' + PREFIX + 'btn ' + PREFIX + 'btn-primary" data-act="close">好的</button>' +
       "</div>";
