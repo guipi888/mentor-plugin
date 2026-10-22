@@ -1,0 +1,226 @@
+/* 导师 Mentor - content overlay 样式（浅色主题，深色文字，桂皮橙强调） */
+
+.mentor-highlight {
+  position: fixed;
+  z-index: 2147483646;
+  border: 2px solid #D97A3E;
+  border-radius: 6px;
+  box-shadow: 0 0 0 9999px rgba(28, 23, 20, 0.35);
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.mentor-highlight.mentor-pulse {
+  animation: mentor-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes mentor-pulse {
+  0%, 100% { box-shadow: 0 0 0 9999px rgba(28, 23, 20, 0.35); }
+  50% { box-shadow: 0 0 0 9999px rgba(28, 23, 20, 0.45); }
+}
+
+.mentor-tooltip {
+  position: fixed;
+  z-index: 2147483647;
+  width: 300px;
+  background: #FFFFFF;
+  border: 1px solid #E5D9CE;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(28, 23, 20, 0.18);
+  padding: 16px;
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: #1C1714;
+}
+
+.mentor-tooltip-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.mentor-step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 11px;
+  background: #D97A3E;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.mentor-step-progress {
+  font-size: 12px;
+  color: #8A7F76;
+}
+
+.mentor-tooltip-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 6px;
+}
+
+.mentor-tooltip-body {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #4A4038;
+  margin: 0 0 14px;
+  white-space: pre-wrap;
+}
+
+.mentor-tooltip-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.mentor-btn {
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid #D97A3E;
+  background: #FFFFFF;
+  color: #D97A3E;
+}
+
+.mentor-btn:hover { background: #FAECE7; }
+
+.mentor-btn-primary {
+  background: #D97A3E;
+  color: #FFFFFF;
+}
+
+.mentor-btn-primary:hover { background: #C26A32; }
+
+.mentor-btn:disabled {
+  border-color: #D3D1C7;
+  color: #B4B2A9;
+  background: #F1EFE8;
+  cursor: not-allowed;
+}
+
+.mentor-waiting {
+  font-size: 12px;
+  color: #8A7F76;
+  margin-top: 8px;
+}
+
+/* 创作模式 */
+.mentor-creator-hover {
+  outline: 2px dashed #D97A3E !important;
+  outline-offset: 2px;
+  cursor: crosshair !important;
+}
+
+.mentor-creator-picked {
+  outline: 2px solid #D97A3E !important;
+  outline-offset: 2px;
+}
+
+.mentor-creator-bar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFFFFF;
+  border: 1px solid #E5D9CE;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(28, 23, 20, 0.18);
+  padding: 10px 18px;
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 13px;
+  color: #1C1714;
+}
+
+.mentor-creator-panel {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2147483647;
+  width: 320px;
+  max-height: 70vh;
+  overflow-y: auto;
+  background: #FFFFFF;
+  border: 1px solid #E5D9CE;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(28, 23, 20, 0.18);
+  padding: 16px;
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: #1C1714;
+}
+
+.mentor-creator-panel h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+
+.mentor-creator-panel label {
+  display: block;
+  font-size: 12px;
+  color: #8A7F76;
+  margin: 10px 0 4px;
+}
+
+.mentor-creator-panel input,
+.mentor-creator-panel textarea,
+.mentor-creator-panel select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  border: 1px solid #D3D1C7;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #1C1714;
+  background: #FFFFFF;
+}
+
+.mentor-creator-panel textarea { resize: vertical; min-height: 56px; }
+
+.mentor-step-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid #E5D9CE;
+  border-radius: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.mentor-step-item .mentor-step-no {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #FAECE7;
+  color: #D97A3E;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.mentor-step-item .mentor-step-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.mentor-step-item button {
+  border: none;
+  background: none;
+  color: #8A7F76;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 4px;
+}
+
+.mentor-step-item button:hover { color: #D97A3E; }

@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "导师 Mentor - 网页软件教学引导",
+  "version": "0.1.1",
+  "description": "开源网页教学引导引擎：分步高亮指引用户学会任何网页应用，支持课程导入导出与社区创作。内置公众号后台入门课程。",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://mp.weixin.qq.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "导师 Mentor"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mp.weixin.qq.com/*"],
+      "js": ["content/content.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

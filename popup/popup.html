@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>导师 Mentor</title>
+<style>
+  body { width: 300px; margin: 0; padding: 14px; font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; color: #1C1714; background: #FFFFFF; }
+  h1 { font-size: 15px; font-weight: 500; margin: 0 0 4px; }
+  .sub { font-size: 12px; color: #8A7F76; margin: 0 0 12px; }
+  .section { margin-bottom: 12px; }
+  .section-title { font-size: 12px; color: #8A7F76; margin-bottom: 6px; }
+  .course-item { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; border: 1px solid #E5D9CE; border-radius: 8px; margin-bottom: 6px; font-size: 13px; }
+  .course-item .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .course-item .meta { font-size: 11px; color: #8A7F76; margin-left: 8px; }
+  button { font-family: inherit; cursor: pointer; border-radius: 14px; font-size: 12px; padding: 4px 12px; border: 1px solid #D97A3E; background: #FFFFFF; color: #D97A3E; }
+  button:hover { background: #FAECE7; }
+  button.primary { background: #D97A3E; color: #FFFFFF; }
+  button.primary:hover { background: #C26A32; }
+  button.ghost { border-color: #D3D1C7; color: #8A7F76; }
+  button.ghost:hover { background: #F1EFE8; }
+  .row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .hint { font-size: 11px; color: #8A7F76; line-height: 1.5; margin-top: 10px; }
+  .status { font-size: 12px; padding: 8px 10px; border-radius: 8px; background: #FAECE7; color: #993C1D; margin-bottom: 10px; display: none; }
+</style>
+</head>
+<body>
+<h1>导师 Mentor</h1>
+<p class="sub">网页软件分步教学引导 · v0.1.0</p>
+<div class="status" id="status"></div>
+
+<div class="section">
+  <div class="section-title">课程列表</div>
+  <div id="course-list"></div>
+</div>
+
+<div class="section">
+  <div class="section-title">操作</div>
+  <div class="row">
+    <button id="btn-import">导入课程</button>
+    <button id="btn-export">导出课程</button>
+    <button id="btn-creator" class="primary">创作模式</button>
+    <button id="btn-stop" class="ghost">停止引导</button>
+  </div>
+  <input type="file" id="file-input" accept=".json" style="display:none">
+</div>
+
+<p class="hint">跟学：点课程「开始」，按页面高亮提示点「下一步」。创作：开启后在页面点选元素，填写讲解即可生成课程。课程仅存本地浏览器。</p>
+
+<script src="popup.js"></script>
+</body>
+</html>

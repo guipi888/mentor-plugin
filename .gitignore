@@ -1,0 +1,11 @@
+# 系统杂项
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 打包产物（源码仓库不含 zip，分发时单独构建）
+*.zip
+
+# 编辑器
+.vscode/
+.idea/

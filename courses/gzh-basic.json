@@ -1,0 +1,91 @@
+{
+  "id": "builtin_gzh_basic",
+  "site": "公众号后台入门：从登录到发出第一篇文章",
+  "url_pattern": "https://mp.weixin.qq.com/*",
+  "version": "1.1",
+  "created": "2026-10-20",
+  "updated": "2026-10-20",
+  "builtin": true,
+  "note": "v1.1 依据多个 2025 年公开教程信源校准界面文字与流程（见 sources 字段）。selector 仍为占位框架，fallback_text 按真实菜单/按钮文字兜底；公众号后台为 Angular SPA 且菜单分组名随版本变化（内容与互动/创作管理），首次使用建议用创作模式在真实页面校准一遍。",
+  "sources": [
+    "https://yiban.io/geo/31969",
+    "https://yiban.io/geo/31590",
+    "https://shankongmao.com/content/special-news/1839",
+    "https://www.jizhil.com/gzhdata/6820.html",
+    "https://wxopen.club/topic/5f9d12bad2340ef27dea2810"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "selector": ".index_page, [class*=index], [class*=welcome]",
+      "fallback_text": "首页",
+      "title": "欢迎进入公众号后台",
+      "content": "这里是你的公众号运营中枢。中间的数据卡片依次是：新增关注、阅读次数、分享次数、消息数量。每天花 2 分钟看这组数字，就能判断账号昨天的表现。登录方式是管理员微信扫码，无需输入密码。",
+      "advance": "manual"
+    },
+    {
+      "id": 2,
+      "selector": ".menu_item, a[href*=appmsg], [class*=menu] a",
+      "fallback_text": "图文素材",
+      "title": "所有内容的家：图文素材",
+      "content": "左侧菜单「图文素材」是你全部文章的仓库（新版在「内容与互动」分组下，旧版叫「素材管理」或「创作管理」，不同版本叫法不同）。已群发的、草稿箱的、写了一半的都在这，写新文章、找旧文章都从这个入口进。",
+      "advance": "manual"
+    },
+    {
+      "id": 3,
+      "selector": "[class*=btn_new], button[class*=primary], a[class*=btn_new]",
+      "fallback_text": "新建图文素材",
+      "title": "新建图文素材",
+      "content": "点右侧绿色的「新建图文素材」按钮，进入编辑器。标题直接决定打开率，建议用一句话说清读者能获得什么，控制在 20 字左右；作者栏填你的名字或笔名。",
+      "advance": "manual"
+    },
+    {
+      "id": 4,
+      "selector": "[class*=editor], .edui_toolbar, iframe[id*=ueditor]",
+      "fallback_text": "正文",
+      "title": "认识编辑器",
+      "content": "顶部工具栏：字体字号、加粗斜体、文字颜色、对齐、插入图片和超链接、插入视频。中间是正文编辑区，可以直接写也可以把稿子粘贴进来。左侧是图文列表，点「+」可添加下一篇，一次最多 8 篇。公众号不支持 Markdown，排版全靠这个工具栏。",
+      "advance": "manual"
+    },
+    {
+      "id": 5,
+      "selector": "[class*=cover], [class*=appmsg_edit] .mask, [class*=item_mask]",
+      "fallback_text": "封面",
+      "title": "设置封面和摘要",
+      "content": "滑动到编辑区下方设置封面和摘要。封面建议尺寸 900×383 像素（2.35:1），是列表页和转发卡片的门面。摘要不填的话系统会自动截取正文开头，建议手动写一段，这是吸引点击的第二次机会。",
+      "advance": "manual"
+    },
+    {
+      "id": 6,
+      "selector": "[class*=preview], a[href*=preview], button[class*=preview]",
+      "fallback_text": "预览",
+      "title": "预览：发送到手机检查",
+      "content": "发布前务必点「预览」（在编辑区下方），输入你自己的微信号，文章会发到手机微信上。检查排版有没有乱、图片是否正常、有没有错别字。这一步能避免 90% 的群发事故。",
+      "advance": "manual"
+    },
+    {
+      "id": 7,
+      "selector": "[class*=btn_send], button[class*=send], #js_send",
+      "fallback_text": "保存并群发",
+      "title": "保存并群发",
+      "content": "确认无误后点编辑区下方的「保存并群发」。弹出的窗口里可以选「立即发送」或「定时发送」（定时可选具体到几点，适合半夜发文不用熬夜），还可以选择群发对象：全部粉丝或某个标签分组。",
+      "advance": "manual"
+    },
+    {
+      "id": 8,
+      "selector": "[class*=dialog], [class*=qr_code], [class*=verify]",
+      "fallback_text": "扫码",
+      "title": "管理员扫码确认",
+      "content": "最后一步需要公众号管理员用微信扫码确认，这是平台的内容安全机制，无法跳过。注意：文章群发后只能修改一次，一次最多改 20 个字，标题、正文、图片无法修改，所以发布前的预览检查必不可少。订阅号每天可群发 1 次，服务号每月 4 次。",
+      "advance": "manual"
+    },
+    {
+      "id": 9,
+      "selector": "a[href*=statistics], [class*=menu] a[href*=stat]",
+      "fallback_text": "统计",
+      "title": "看懂数据：统计入口",
+      "content": "左侧「统计」下有四个常用板块：用户分析（新增、取关、净增、累计粉丝及性别年龄地域）、内容分析（每篇文章的阅读、分享、收藏和阅读来源分布）、菜单分析、消息分析。重点看两个数：阅读来源里「搜一搜」的占比（长尾流量信号），和单篇的读完率（内容质量信号）。到这里，公众号的核心动线你就全部走完了。",
+      "advance": "manual"
+    }
+  ]
+}
